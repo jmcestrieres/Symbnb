@@ -19,7 +19,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mb-3">
-            {{ad.content | raw}}
+            {{ ad.content | raw }}
 
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -50,18 +50,21 @@
 
         </div>
         <div class="col">
+        {% set a = ad.author %}
             <div class="row">
-                <div class="col-4">
-                    <img src="http://placehold.it/64x64" alt="Avatar de JMC">
+                <div class="col-3">
+                    <a href="{{path('user_show', {'slug': a.slug})}}">
+                        <img src="{{a.picture}}" class="avatar avatar-medium" alt="Avatar de {{a.fullName}}">
+                    </a>
                 </div>
                 <div class="col">
-                    <h3>Jean-Marc Cestrières</h3>
-                    <span class="badge badge-primary">3 annonces</span>
+                    <a href="{{path('user_show', {'slug': a.slug})}}">
+                        <h3>{{a.fullName}}</h3>
+                    </a>
+                    <span class="badge badge-primary">{{a.ads | length}} annonces</span>
                 </div>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quas ex fugiat est earum inventore debitis possimus sed accusantium assumenda.</p>
-            <p>Ratione, explicabo. Nam, autem perspiciatis. Eligendi, alias quos? Quod tenetur quasi eius numquam accusamus blanditiis, a et nemo adipisci provident.</p>
-            <p>Officia assumenda optio, voluptatum iusto vitae fuga dolorem adipisci perspiciatis nulla blanditiis. Adipisci facere voluptates, repudiandae aut blanditiis totam officia!</p>
+            {{a.description | raw}}
         </div>
     </div>
 </div>
