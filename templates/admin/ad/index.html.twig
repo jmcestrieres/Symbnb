@@ -10,30 +10,30 @@
     <table class="table table-hover">
         <thead class="align-items-center">
             <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Auteur</th>
-                <th class="text-center">Réservations</th>
-                <th class="text-center">Note</th>
+                <th class="align-middle">Id</th>
+                <th class="align-middle">Titre</th>
+                <th class="align-middle">Auteur</th>
+                <th class="text-center align-middle">Réservations</th>
+                <th class="text-center align-middle">Note</th>
                 <th></th>
             </tr>
         </thead>
         <tbody >
         {% for ad in ads %}
             <tr >
-                <td>{{ad.id}}</td>
-                <td>{{ad.title}}</td>
-                <td>
+                <td class="align-middle">{{ad.id}}</td>
+                <td class="align-middle">{{ad.title}}</td>
+                <td class="align-middle">
                     <img src="{{ad.author.picture}}" alt="Avatar de {{ad.author.fullName}}" class="avatar avatar-micro mr-2">
                     {{ad.author.fullName}}
                 </td>
-                <td class="text-center">
+                <td class="text-center align-middle">
                     <span class="badge badge-primary">{{ad.bookings | length}}</span>
                 </td>
-                <td class="text-center">
+                <td class="text-center align-middle">
                     <span class="badge badge-primary">{{ad.avgRatings | number_format(1, ',', ' ')}}</span>
                 </td>
-                <td>
+                <td class="align-middle">
                     <a href="{{path('admin_ads_edit', {'id': ad.id})}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                     <a href="{{path('admin_ads_delete', {'id': ad.id})}}" class="btn btn-danger"><i class="fas fa-trash"onclick="return confirm(`Êtes vous sur de vouloir supprimer l'annonce n° {{ad.id}} ?`)"></i></a>
                 </td>

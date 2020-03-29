@@ -9,25 +9,25 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Date</th>
-                <th>Visiteur</th>
-                <th>Annonce</th>
-                <th class="text-center">Durée</th>
-                <th class="text-center">Montant</th>
+                <th class="align-middle">Id</th>
+                <th class="align-middle">Date</th>
+                <th class="align-middle">Visiteur</th>
+                <th class="align-middle">Annonce</th>
+                <th class="text-center align-middle">Durée</th>
+                <th class="text-center align-middle">Montant</th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             {% for booking in bookings %}
             <tr>
-                <td>{{booking.id}}</td>
-                <td>{{booking.createdAt|date('d/m/y H:i')}}</td>
-                <td><img src="{{booking.booker.picture}}" alt="Avatar de {{booking.booker.fullName}}" class="avatar avatar-micro"> {{booking.booker.fullName}}</td>
-                <td>{{booking.ad.title}}</td>
-                <td class="text-center">{{booking.duration}} jour{% if booking.duration > 1 %}s{% endif %}</td>
-                <td class="text-center">{{booking.amount | number_format(2, ',', ' ')}} &euro;</td>
-                <td>
+                <td class="align-middle">{{booking.id}}</td>
+                <td class="align-middle">{{booking.createdAt|date('d/m/y H:i')}}</td>
+                <td class="align-middle"><img src="{{booking.booker.picture}}" alt="Avatar de {{booking.booker.fullName}}" class="avatar avatar-micro"> {{booking.booker.fullName}}</td>
+                <td class="align-middle">{{booking.ad.title}}</td>
+                <td class="text-center align-middle">{{booking.duration}} jour{% if booking.duration > 1 %}s{% endif %}</td>
+                <td class="text-center align-middle">{{booking.amount | number_format(2, ',', ' ')}} &euro;</td>
+                <td class="align-middle">
                     <a href="{{path('admin_booking_edit', {'id': booking.id})}}" class="btn btn-primary">
                     <i class="fas fa-pen"></i>
                     </a>

@@ -10,11 +10,11 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Date</th>
-                <th>Auteur</th>
-                <th>Commentaire</th>
-                <th class="text-center">Note</th>
+                <th class="align-middle">Id</th>
+                <th class="align-middle">Date</th>
+                <th class="align-middle">Auteur</th>
+                <th class="align-middle">Commentaire</th>
+                <th class="text-center align-middle">Note</th>
                 <th>Annonce</th>
                 <th></th>
             </tr>
@@ -22,15 +22,15 @@
         <tbody>
             {% for comment in comments %}
             <tr>
-                <td>{{comment.id}}</td>
-                <td>{{comment.createdAt|date('d/m/y H:i')}}</td>
-                <td><img src="{{comment.author.picture}}" alt="Avatar de {{comment.author.fullName}}" class="avatar avatar-micro"> {{comment.author.fullName}}</td>
-                <td>{{comment.content}}</td>
-                <td class="text-center">
+                <td class="align-middle">{{comment.id}}</td>
+                <td class="align-middle">{{comment.createdAt|date('d/m/y H:i')}}</td>
+                <td class="align-middle"><img src="{{comment.author.picture}}" alt="Avatar de {{comment.author.fullName}}" class="avatar avatar-micro"> {{comment.author.fullName}}</td>
+                <td class="align-middle">{{comment.content}}</td>
+                <td class="text-center align-middle">
                     <span class="badge badge-primary">{{comment.rating}}</span>
                 </td>
-                <td>{{comment.ad.title}}</td>
-                <td>
+                <td class="align-middle">{{comment.ad.title}}</td>
+                <td class="align-middle">
                     <a href="{{path('admin_comment_edit', {'id': comment.id})}}" class="btn btn-primary mb-1">
                     <i class="fas fa-pen"></i>
                     </a>
