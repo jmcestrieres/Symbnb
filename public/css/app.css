@@ -3,7 +3,7 @@ div.textducarousel h5, div.textducarousel p {
     color: white !important;
 }
 
-div.container {
+div.container, div.container-fluid {
     margin-top: 20px;
 }
 
