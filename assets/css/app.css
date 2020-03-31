@@ -1,3 +1,5 @@
+@import url('./bootstrap.min.css');
+
 div.textducarousel h5, div.textducarousel p {
     text-shadow: 3px 3px 3px rgba(0,0,0,0.5) !important;
     color: white !important;
